@@ -31,6 +31,24 @@ document.getElementById("tourForm").addEventListener("submit", function (e) {
   let profitPerPerson = parseFloat(
     document.getElementById("profitPerPerson").value
   );
+
+  // Check if any required field is empty
+  let requiredInputs = document.querySelectorAll("input[required]");
+  let isValid = true;
+  requiredInputs.forEach(function (input) {
+    if (input.value.trim() === "") {
+      isValid = false;
+      input.classList.add("error");
+    } else {
+      input.classList.remove("error");
+    }
+  });
+
+  if (!isValid) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
   let totalProfit = profitPerPerson * 10;
   let eVisa = document.getElementById("eVisa");
   // Calculate total cost

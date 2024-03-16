@@ -8,86 +8,103 @@
   </head>
   <body>
     <form action="#" method="POST" id="tourForm">
-      <label for="tourDays">Number of Tour Days:</label>
-      <input type="number" id="tourDays" name="tourDays" /><br />
+      <div class="column">
+        <label for="tourDays">Number of Tour Days:</label>
+        <input type="number" id="tourDays" name="tourDays" required /><br />
 
-      <label for="tourNights">Number of Tour Nights:</label>
-      <input type="number" id="tourNights" name="tourNights" /><br />
+        <label for="tourNights">Number of Tour Nights:</label>
+        <input type="number" id="tourNights" name="tourNights" required /><br />
 
-      <label for="numberOfParticipants">Number of Participants:</label>
-      <input
-        type="number"
-        id="numberOfParticipants"
-        name="numberOfParticipants"
-      /><br />
+        <label for="numberOfParticipants">Number of Participants:</label>
+        <input
+          type="number"
+          id="numberOfParticipants"
+          name="numberOfParticipants"
+          required
+        /><br />
 
-      <label for="hotelPriceDouble"
-        >Price of Hotels for 1 night for double:</label
-      >
-      <input
-        type="number"
-        id="hotelPriceDouble"
-        name="hotelPriceDouble"
-      /><br />
+        <label for="hotelPriceDouble"
+          >Price of Hotels for 1 night for double:</label
+        >
+        <input
+          type="number"
+          id="hotelPriceDouble"
+          name="hotelPriceDouble"
+          required
+        /><br />
 
-      <label for="hotelPriceSingle"
-        >Price of Hotels for 1 night for Single:</label
-      >
-      <input
-        type="number"
-        id="hotelPriceSingle"
-        name="hotelPriceSingle"
-      /><br />
+        <label for="transportationPrice">Transportation Price:</label>
+        <input
+          type="number"
+          id="transportationPrice"
+          name="transportationPrice"
+          required
+        /><br />
 
-      <label for="transportationPrice">Transportation Price:</label>
-      <input
-        type="number"
-        id="transportationPrice"
-        name="transportationPrice"
-      /><br />
+        <label for="hotelPriceSingle"
+          >Price of Hotels for 1 night for Single:</label
+        >
+        <input
+          type="number"
+          id="hotelPriceSingle"
+          name="hotelPriceSingle"
+          required
+        /><br />
+      </div>
 
-      <label for="guidePricePerDay">Guide Price per Day:</label>
-      <input
-        type="number"
-        id="guidePricePerDay"
-        name="guidePricePerDay"
-      /><br />
+      <div class="column">
+        <label for="guidePricePerDay">Guide Price per Day:</label>
+        <input
+          type="number"
+          id="guidePricePerDay"
+          name="guidePricePerDay"
+          required
+        /><br />
 
-      <label for="numberOfGuideDays">Number of Guide Service days:</label>
-      <input
-        type="number"
-        id="numberOfGuideDays"
-        name="numberOfGuideDays"
-      /><br />
+        <label for="numberOfGuideDays">Number of Guide Service days:</label>
+        <input
+          type="number"
+          id="numberOfGuideDays"
+          name="numberOfGuideDays"
+          required
+        /><br />
 
-      <label for="guidePricePerTransfer">Guide Price per Transfer:</label>
-      <input
-        type="number"
-        id="guidePricePerTransfer"
-        name="guidePricePerTransfer"
-      /><br />
+        <label for="guidePricePerTransfer">Guide Price per Transfer:</label>
+        <input
+          type="number"
+          id="guidePricePerTransfer"
+          name="guidePricePerTransfer"
+          required
+        /><br />
 
-      <label for="numberOfTransfers">Number of Transfers:</label>
-      <input
-        type="number"
-        id="numberOfTransfers"
-        name="numberOfTransfers"
-      /><br />
+        <label for="numberOfTransfers">Number of Transfers:</label>
+        <input
+          type="number"
+          id="numberOfTransfers"
+          name="numberOfTransfers"
+          required
+        /><br />
 
-      <input type="checkbox" id="eVisa" name="eVisa" />
-      <label for="eVisa">E-Visa</label><br />
+        <input type="checkbox" id="eVisa" name="eVisa" />
+        <label id="eVisa" for="eVisa">E-Visa</label><br />
 
-      <label for="profitPerPerson">Profit per Person:</label>
-      <input type="number" id="profitPerPerson" name="profitPerPerson" /><br />
+        <label for="profitPerPerson">Profit per Person:</label>
+        <input
+          type="number"
+          id="profitPerPerson"
+          name="profitPerPerson"
+          required
+        /><br />
 
-      <label for="taxAndRisk">Tax and Risk (12%):</label>
-      <input
-        type="text"
-        id="taxAndRisk"
-        name="taxAndRisk"
-        value="12%"
-        disabled
-      /><br />
+        <label for="taxAndRisk">Tax and Risk (12%):</label>
+        <input
+          type="text"
+          id="taxAndRisk"
+          name="taxAndRisk"
+          value="12%"
+          disabled
+        /><br />
+      </div>
 
       <button type="submit" class="submit">Calculate</button>
     </form>
