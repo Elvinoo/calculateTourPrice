@@ -61,11 +61,21 @@ document.getElementById("tourForm").addEventListener("submit", function (e) {
   // Calculate and display the price per person for different numbers of participants
   for (let i = minParticipants; i <= maxParticipants; i++) {
     // Calculate total cost for the current number of participants
-    let totalPrice =
+    let totalPrice;
+    if (i === 1) {
+      totalPrice = tourNights * hotelPriceSingle;
+    } else {
+      totalPrice =
+        tourNights * hotelPriceDouble * (i / 2) +
+        numberOfGuideDays * guidePricePerDay +
+        numberOfTransfers * guidePricePerTransfer +
+        transportationPrice;
+    }
+    /*  let totalPrice =
       tourNights * hotelPriceDouble * (i / 2) +
       numberOfGuideDays * guidePricePerDay +
       numberOfTransfers * guidePricePerTransfer +
-      transportationPrice;
+      transportationPrice; */
 
     // Add prices of selected museums to the total
     let museumCheckboxes = document.querySelectorAll(
