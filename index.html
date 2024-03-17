@@ -11,19 +11,37 @@
     <form action="#" method="POST" id="tourForm">
       <div class="column">
         <label for="tourDays">Number of Tour Days:</label>
-        <input type="number" id="tourDays" name="tourDays" required /><br />
+        <input type="number" id="tourDays" name="tourDays" value="0" /><br />
 
         <label for="tourNights">Number of Tour Nights:</label>
         <input type="number" id="tourNights" name="tourNights" required /><br />
 
-        <label for="numberOfParticipants">Number of Participants:</label>
+        <label for="minParticipants">Pax from:</label>
         <input
           type="number"
-          id="numberOfParticipants"
-          name="numberOfParticipants"
+          id="minParticipants"
+          name="minParticipants"
+          value="1"
           required
         /><br />
 
+        <label for="maxParticipants">Pax to:</label>
+        <input
+          type="number"
+          id="maxParticipants"
+          name="maxParticipants"
+          value="5"
+          required
+        /><br />
+        <label for="hotelPriceSingle"
+          >Price of Hotels for 1 night for Single:</label
+        >
+        <input
+          type="number"
+          id="hotelPriceSingle"
+          name="hotelPriceSingle"
+          required
+        /><br />
         <label for="hotelPriceDouble"
           >Price of Hotels for 1 night for double:</label
         >
@@ -33,22 +51,12 @@
           name="hotelPriceDouble"
           required
         /><br />
-
         <label for="transportationPrice">Transportation Price:</label>
         <input
           type="number"
           id="transportationPrice"
           name="transportationPrice"
-          required
-        /><br />
-
-        <label for="hotelPriceSingle"
-          >Price of Hotels for 1 night for Single:</label
-        >
-        <input
-          type="number"
-          id="hotelPriceSingle"
-          name="hotelPriceSingle"
+          value="0"
           required
         /><br />
       </div>
@@ -59,6 +67,7 @@
           type="number"
           id="guidePricePerDay"
           name="guidePricePerDay"
+          value="0"
           required
         /><br />
 
@@ -67,6 +76,7 @@
           type="number"
           id="numberOfGuideDays"
           name="numberOfGuideDays"
+          value="0"
           required
         /><br />
 
@@ -75,6 +85,7 @@
           type="number"
           id="guidePricePerTransfer"
           name="guidePricePerTransfer"
+          value="0"
           required
         /><br />
 
@@ -84,19 +95,123 @@
           id="numberOfTransfers"
           name="numberOfTransfers"
           required
+          value="0"
         /><br />
+        <label for="numberOfMeals">Number of Meals:</label>
+        <input
+          type="number"
+          id="numberOfMeals"
+          name="numberOfMeals"
+          required
+          value="0"
+        /><br />
+        <label for="priceOfMeals">Price of one Meal:</label>
+        <input
+          type="number"
+          id="priceOfMeals"
+          name="priceOfMeals"
+          required
+          value="0"
+        /><br />
+      </div>
 
-        <input type="checkbox" id="eVisa" name="eVisa" />
-        <label id="eVisa" for="eVisa">E-Visa</label><br />
+      <div class="museums">
+        <div class="left">
+          <input type="checkbox" id="maidenTower" name="museums" value="15" />
+          <label for="maidenTower">Maiden Tower(15 AZN)</label><br />
 
+          <input
+            type="checkbox"
+            id="shirvanshahPalace"
+            name="museums"
+            value="15"
+          />
+          <label for="shirvanshahPalace">Shirvanshah's Palace (15 AZN)</label
+          ><br />
+
+          <input type="checkbox" id="carpetMuseum" name="museums" value="10" />
+          <label for="carpetMuseum">Carpet Museum (10 AZN)</label><br />
+
+          <input
+            type="checkbox"
+            id="heydarAliyevCenter"
+            name="museums"
+            value="15"
+          />
+          <label for="heydarAliyevCenter">Heydar Aliyev Center (15 AZN)</label
+          ><br />
+
+          <input
+            type="checkbox"
+            id="nationalMuseumHistory"
+            name="museums"
+            value="10"
+          />
+          <label for="nationalMuseumHistory"
+            >National museum of History (10 AZN)</label
+          ><br />
+
+          <input
+            type="checkbox"
+            id="gobustanRockArt"
+            name="museums"
+            value="10"
+          />
+          <label for="gobustanRockArt">Gobustan Rock Art (10 AZN)</label><br />
+
+          <input type="checkbox" id="mudVolcanos" name="museums" value="5" />
+          <label for="mudVolcanos">Mud Volcanos (5 AZN) </label><br />
+
+          <input type="checkbox" id="atashgah" name="museums" value="9" />
+          <label for="atashgah">Atashgah (9 AZN) </label><br />
+          <input type="checkbox" id="nobel" name="museums" value="5" />
+          <label for="nobel">Nobel Museum (5 AZN) </label>
+        </div>
+        <div class="right">
+          <input type="checkbox" id="yanardagh" name="museums" value="9" />
+          <label for="yanardagh">Yanardagh (9 AZN)</label><br />
+
+          <input type="checkbox" id="galaReserve" name="museums" value="10" />
+          <label for="galaReserve">Gala Reserve (10 AZN)</label><br />
+
+          <input type="checkbox" id="mardakanCastle" name="museums" value="5" />
+          <label for="mardakanCastle">Mardakan Castle (5 AZN) </label><br />
+
+          <input type="checkbox" id="diriBaba" name="museums" value="10" />
+          <label for="diriBaba">Diri Baba (10 AZN)</label><br />
+
+          <input type="checkbox" id="chuxurGabala" name="museums" value="10" />
+          <label for="chuxurGabala">Chuxur Gabala (10 AZN)</label><br />
+
+          <input type="checkbox" id="fazil" name="museums" value="5" />
+          <label for="fazil">Fazil (5 AZN)</label><br />
+
+          <input
+            type="checkbox"
+            id="shakiKhansPalace"
+            name="museums"
+            value="10"
+          />
+          <label for="shakiKhansPalace">Shaki Khan's Palace (10 AZN) </label
+          ><br />
+
+          <input type="checkbox" id="kishShaki" name="museums" value="10" />
+          <label for="kishShaki">Kish Shaki (10 AZN)</label><br />
+          <input type="checkbox" id="eVisa" name="museums" value="50" />
+          <label for="eVisa">E-Visa (50 AZN) </label><br />
+        </div>
+      </div>
+      <div class="column">
         <label for="profitPerPerson">Profit per Person:</label>
         <input
           type="number"
           id="profitPerPerson"
           name="profitPerPerson"
+          value="0"
           required
         /><br />
-
+      </div>
+      <div class="column">
         <label for="taxAndRisk">Tax and Risk (12%):</label>
         <input
           type="text"
@@ -106,7 +221,6 @@
           disabled
         /><br />
       </div>
-
       <button type="submit" class="submit">Calculate</button>
     </form>
 

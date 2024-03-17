@@ -2,6 +2,12 @@ document.getElementById("tourForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   // Get values from input fields
+  let minParticipants = parseInt(
+    document.getElementById("minParticipants").value
+  );
+  let maxParticipants = parseInt(
+    document.getElementById("maxParticipants").value
+  );
   let tourNights = parseInt(document.getElementById("tourNights").value);
   let hotelPriceDouble = parseFloat(
     document.getElementById("hotelPriceDouble").value
@@ -22,9 +28,8 @@ document.getElementById("tourForm").addEventListener("submit", function (e) {
   let numberOfTransfers = parseInt(
     document.getElementById("numberOfTransfers").value
   );
-  let numberOfParticipants = parseInt(
-    document.getElementById("numberOfParticipants").value
-  );
+  let numberOfMeals = parseInt(document.getElementById("numberOfMeals").value);
+  let priceOfMeals = parseFloat(document.getElementById("priceOfMeals").value);
   let transportationPrice = parseFloat(
     document.getElementById("transportationPrice").value
   );
@@ -49,29 +54,56 @@ document.getElementById("tourForm").addEventListener("submit", function (e) {
     return;
   }
 
-  let totalProfit = profitPerPerson * 10;
-  let eVisa = document.getElementById("eVisa");
-  // Calculate total cost
-  let totalPrice = tourNights * hotelPriceDouble * (numberOfParticipants / 2);
-  totalPrice += numberOfGuideDays * guidePricePerDay;
-  totalPrice += numberOfTransfers * guidePricePerTransfer;
-  totalPrice += transportationPrice;
-  if (eVisa.checked) {
-    totalPrice += 50 * numberOfParticipants;
+  // Create a table to display the results
+  let table =
+    "<table><tr><th>Number of Participants</th><th>Price per Person</th></tr>";
+
+  // Calculate and display the price per person for different numbers of participants
+  for (let i = minParticipants; i <= maxParticipants; i++) {
+    // Calculate total cost for the current number of participants
+    let totalPrice =
+      tourNights * hotelPriceDouble * (i / 2) +
+      numberOfGuideDays * guidePricePerDay +
+      numberOfTransfers * guidePricePerTransfer +
+      transportationPrice;
+
+    // Add prices of selected museums to the total
+    let museumCheckboxes = document.querySelectorAll(
+      'input[name="museums"]:checked'
+    );
+    museumCheckboxes.forEach(function (checkbox) {
+      totalPrice += parseFloat(checkbox.value) * i;
+    });
+
+    // Add the price of meals to the total
+    totalPrice += numberOfMeals * priceOfMeals * i;
+
+    // Add the profit to the total
+    let totalProfit = profitPerPerson * i;
+    totalPrice += totalProfit;
+
+    // Calculate tax and final price
+    let taxAndRisk = totalPrice * 0.12;
+    let finalPrice = totalPrice + taxAndRisk;
+
+    // Calculate price per person
+    let pricePerPerson = finalPrice / i;
+
+    // Add the results to the table
+    table += `<tr><td>${i} pax</td><td>₼ ${pricePerPerson.toFixed(
+      2
+    )}</td></tr>`;
   }
-  let finalPrice = (totalPrice + totalProfit) * 0.12 + totalPrice + totalProfit;
 
-  // Display result to user
-  document.getElementById("totalCost").innerText =
-    "Total cost without taxes : $" + totalPrice;
+  // Calculate SS
+  let ss = (hotelPriceSingle - hotelPriceDouble / 2) * tourNights;
 
-  document.getElementById("singleCost").innerText =
-    "Price for 1 person : $" + totalPrice / numberOfParticipants;
-  document.getElementById("ss").innerText =
-    "SS: $" + (hotelPriceSingle - hotelPriceDouble / 2) * tourNights;
-  document.getElementById("totalWithProfit").innerText =
-    "Total Price with profit, taxes and risks: $" + finalPrice;
-  document.getElementById("singleWithProfit").innerText =
-    "Price per 1 person with profit, taxes and risks: $" +
-    finalPrice / numberOfParticipants;
+  // Add SS to the end of the table
+  table += `<tr><td>SS</td><td>₼ ${ss.toFixed(2)}</td></tr>`;
+
+  // Close the table
+  table += "</table>";
+
+  // Display the table
+  document.getElementById("result").innerHTML = table;
 });
