@@ -88,25 +88,27 @@ button:hover {
 }
 
 #result {
-  margin-top: 20px;
+  margin: 20px auto; /* Center the table */
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  overflow-x: auto;
 }
 
-#result p {
-  margin-bottom: 10px;
+#result table {
+  width: 90%; /* Adjusted table width */
+  border-collapse: collapse;
+  margin: 0 auto; /* Center the table */
 }
 
-#error {
-  color: red;
+#result th,
+#result td {
+  padding: 3px; /* Smaller padding for table cells */
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
-.success {
-  color: green;
+#result th {
+  background-color: #ccc; /* Changed background color to gray */
 }
