@@ -1,325 +1,130 @@
-/* MAIN CSS */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+.name {
+  width: 100%;
+  display: flex;
+}
+
+h1 {
+  margin: 0 auto;
 }
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
-  font-size: 0.9rem;
+  background-color: #f5f5f5;
+  font-size: 14px;
 }
 
-/* Container */
-.container {
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.column {
+  flex: 0 0 calc(50% - 10px);
+}
+
+.column label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.column input[type="number"],
+.column input[type="text"],
+.column button,
+.column input[type="checkbox"] {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.museums {
   width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.25rem;
-  background-color: #fff;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield; /* Firefox */
-}
-/* Header */
-h1 {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
-/* Form Container */
-.formContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-/* First Part */
-.firstPart {
-  text-align: center;
-  display: flex;
-  gap: 1.5rem;
-}
-
-/* Pax Section */
-.pax,
-.guide,
-.guideTransfer,
-.meals,
-.galaDinner,
-.profit,
-.guideDriverExpenses {
-  width: 100%;
-}
-
-/* Hotel Section */
-.hotels {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.hotelSection {
-  flex: 1;
-  border: 0.0625rem solid #ccc;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  padding-top: 1rem;
-  background-color: #fff;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-}
-
-.hotelSection h1 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-/* Hotel Details */
-.hotelDetails {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  text-align: center;
-}
-
-.single,
-.double,
-.nights {
-  flex: 1;
-}
-
-.hotelDetails label {
-  color: #555;
-}
-input {
-  margin: 0.3rem 0;
-  text-align: center;
-  width: 100%;
-}
-.hotelDetails input[type="number"] {
-  width: 100%;
-  padding: 0.75rem;
-  border: 0.0625rem solid #ccc;
-  border-radius: 0.25rem;
-}
-
-/* Transportation Section */
-.transportation {
-  margin: 0 auto;
-  padding: 1.5rem;
-  padding-top: 1rem;
-  border: 0.0625rem solid #ccc;
-  border-radius: 0.5rem;
-  background-color: #fff;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-}
-
-.transportation h1 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.cars {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  text-align: center;
+  margin-bottom: 15px;
 }
 
-.sedan,
-.minivan,
-.sprinter,
-.bus {
-  flex: 1;
+.column input[type="checkbox"] {
+  margin-right: 5px;
 }
 
-.transportation label {
-  color: #555;
-}
-
-.transportation input[type="number"] {
+button {
   width: 100%;
-  padding: 0.75rem;
-  border: 0.0625rem solid #ccc;
-  border-radius: 0.25rem;
-}
-
-/* Calculate Button */
-.calculateBtn {
-  width: 100%;
-  font-size: 1rem;
-  padding: 0.75rem;
+  padding: 10px;
+  margin-bottom: 15px;
   border: none;
-  background-color: #ffe141;
-  color: black;
-  font-weight: 700;
-  cursor: pointer;
-  border-radius: 2rem;
-}
-
-/* .calculateBtn:hover {
-  background-color: #ffe141;
-} */
-/* Museums Section */
-.museums {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 0.5rem;
-  column-gap: 0.1rem;
-  margin-bottom: 1rem;
-  background-color: #fff;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-  border: 0.0625rem solid #ccc;
-  border-radius: 0.5rem;
-  padding: 1.25rem;
-}
-
-.museums input[type="checkbox"] {
-  display: none; /* Hide the checkboxes */
-}
-
-/* Custom checkbox design */
-.museums label {
-  position: relative;
-  display: flex;
-  width: 16%;
-  font-size: 0.9rem;
-  align-items: center; /* Center the text vertically */
-  padding-left: 2rem;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
   cursor: pointer;
 }
 
-.museums label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%); /* Center the checkbox vertically */
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid #ffe141; /* Border color */
-  border-radius: 3px;
+button:hover {
+  background-color: #45a049;
 }
 
-.museums input[type="checkbox"]:checked + label:before {
-  background-color: #ffe141; /* Fill color when checked */
-}
 #result {
-  margin-top: 1rem;
+  margin: 20px auto; /* Center the table */
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
 }
 
 #result table {
-  width: 90%;
+  width: 90%; /* Adjusted table width */
   border-collapse: collapse;
-  margin: 0 auto;
-  border-radius: 0.5rem; /* Add border radius */
-  overflow: hidden; /* Hide overflowing content */
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+  margin: 0 auto; /* Center the table */
 }
 
 #result th,
 #result td {
-  padding: 0.75rem; /* Adjust padding for better spacing */
+  padding: 3px; /* Smaller padding for table cells */
   border: 1px solid #ddd;
-  text-align: center;
+  text-align: left;
 }
 
 #result th {
-  background-color: green;
-  color: white; /* Adjust text color for better contrast */
+  background-color: #ccc; /* Changed background color to gray */
+}
+/* Add this CSS to style the hotel sections inputs */
+.hotel-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
-  h1 {
-    margin-bottom: 0.2rem;
-  }
-  .museums label {
-    width: 49%;
-  }
-  h1 {
-    font-size: 1.2rem; /* Example font size for h1 */
-  }
-
-  .hotelSection h1 {
-    font-size: 1.2rem; /* Example font size for hotel section h1 */
-  }
-
-  .transportation h1 {
-    font-size: 1.2rem; /* Example font size for transportation section h1 */
-  }
-
-  .calculateBtn {
-    font-size: 1rem; /* Example font size for calculate button */
-  }
-
-  .museums label {
-    font-size: 0.9rem; /* Example font size for museums label */
-  }
-  .hotels {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  /* Adjust input sizes */
-  input[type="number"] {
-    padding: 0.5rem; /* Example padding for input fields */
-    text-align: center;
-    width: 100%;
-  }
-  .firstPart {
-    flex-wrap: wrap;
-  }
-
-  /* Display inputs of firstPart in the same line */
-  .firstPart .pax,
-  .firstPart .guide,
-  .firstPart .guideTransfer,
-  .firstPart .meals,
-  .firstPart .galaDinner,
-  .firstPart .profit,
-  .firstPart .guideDriverExpenses {
-    padding: 0.01rem;
-    width: 48%; /* Set width to 50% to display inputs in the same line */
-  }
-  .firstPart .profit {
-    width: 96%;
-  }
-  .firstPart {
-    gap: 0;
-  }
+.hotel-section label {
+  flex: 1; /* Take up equal space */
+  margin-right: 10px;
 }
-@media screen and (min-width: 767px) and (max-width: 1024px) {
-  .museums label {
-    width: 32%; /* Adjust width to fit three checkboxes per row */
-  }
-  .firstPart {
-    flex-wrap: wrap;
-  }
 
-  /* Display inputs of firstPart in a single column */
-  .firstPart .pax,
-  .firstPart .guide,
-  .firstPart .guideTransfer,
-  .firstPart .meals,
-  .firstPart .galaDinner,
-  .firstPart .profit {
-    width: 48%; /* Set width to 100% for single-column layout */
-  }
-  .firstPart .profit {
-    width: 96%;
-  }
+.hotel-section input[type="number"] {
+  width: 50px; /* Adjust the width of the input fields */
+  margin-right: 10px;
 }
