@@ -172,8 +172,8 @@ input {
 }
 
 /* .calculateBtn:hover {
-  background-color: #ffe141;
-} */
+    background-color: #ffe141;
+  } */
 /* Museums Section */
 .museums {
   display: flex;
@@ -273,7 +273,9 @@ input {
     flex-direction: column;
     gap: 0.5rem;
   }
-
+  #result table {
+    font-size: 0.8rem;
+  }
   /* Adjust input sizes */
   input[type="number"] {
     padding: 0.5rem; /* Example padding for input fields */
@@ -309,6 +311,26 @@ input {
   .firstPart {
     flex-wrap: wrap;
   }
+  h1 {
+    font-size: 1.1rem;
+  }
+  .hotelSection h1 {
+    font-size: 1rem;
+  }
+  .transportation h1 {
+    font-size: 1rem;
+  }
+  .calculateBtn {
+    font-size: 0.9rem;
+  }
+  .museums label {
+    font-size: 0.8rem;
+  }
+
+  /* Adjust font size for table */
+  #result table {
+    font-size: 0.9rem;
+  }
 
   /* Display inputs of firstPart in a single column */
   .firstPart .pax,
@@ -316,6 +338,7 @@ input {
   .firstPart .guideTransfer,
   .firstPart .meals,
   .firstPart .galaDinner,
+  .firstPart .guideDriverExpenses,
   .firstPart .profit {
     width: 48%; /* Set width to 100% for single-column layout */
   }
